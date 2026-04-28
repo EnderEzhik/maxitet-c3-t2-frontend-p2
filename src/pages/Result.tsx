@@ -25,19 +25,17 @@ function Result() {
     const storedBestResult = Number(localStorage.getItem("best-rating") ?? 0);
     const bestResult = Math.max(storedBestResult, rating);
 
-    if (bestResult !== storedBestResult) {
+    if (bestResult > storedBestResult) {
         localStorage.setItem("best-rating", String(bestResult));
     }
 
     return (
         <div className="container">
-            <h2 className="title">Результат</h2>
+            <h2>Результат</h2>
             <p>Вы ответили правильно на</p>
             <p className="score">{rating} из {questions.length}</p>
-            <div className="result-actions">
-                <div className="best-score">Лучший результат: {bestResult}</div>
-                <button className="btn" onClick={() => navigate("/")}>Новая викторина</button>
-            </div>
+            <div className="best-score">Лучший результат: {bestResult}</div>
+            <button onClick={() => navigate("/")}>Новая викторина</button>
         </div>
     )
 }

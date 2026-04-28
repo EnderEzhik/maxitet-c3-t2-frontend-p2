@@ -30,10 +30,22 @@ function Quiz() {
             navigate("/result");
         }
     }
+
+    function handlePrev() {
+        if (currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+        }
+    };
+
     return (
         <div className="container">
             <p className="progress">Вопрос {currentIndex + 1} / {questions.length}</p>
             <QuestionCard question={questions[currentIndex]} onSelectChange={handleOptionChange} selectedOption={selectedAnswers[currentIndex]}/>
+            {
+                currentIndex > 0 ?
+                <button className="btn" onClick={handlePrev}>Назад</button>
+                : null
+            }
             <button className="btn" onClick={handleNext}>
                 {currentIndex === questions.length - 1 ? "Завершить" : "Далее"}
             </button>

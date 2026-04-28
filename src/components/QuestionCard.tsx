@@ -10,7 +10,7 @@ interface Props {
 function QuestionCard({ question, onSelectChange, selectedOption }: Props) {
     return (
         <div>
-            <h2 className="question-text">{question.text}</h2>
+            <h2>{question.text}</h2>
             {
                 question.options.map(o =>
                 <label key={o.id} className={`option ${o.id === selectedOption?.selected_answer_id ? "selected" : ""}`}>
