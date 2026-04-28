@@ -6,13 +6,11 @@ import Result from './pages/Result';
 
 function App() {
   return (
-    <main className="app">
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/quiz" element={<Quiz/>}/>
-        <Route path="/result" element={<Result/>}/>
-      </Routes>
-    </main>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/quiz" element={<Quiz/>}/>
+      <Route path="/result" element={<Result/>}/>
+    </Routes>
   )
 }
 

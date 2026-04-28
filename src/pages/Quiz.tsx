@@ -43,10 +43,10 @@ function Quiz() {
             <QuestionCard question={questions[currentIndex]} onSelectChange={handleOptionChange} selectedOption={selectedAnswers[currentIndex]}/>
             {
                 currentIndex > 0 ?
-                <button className="btn" onClick={handlePrev}>Назад</button>
+                <button className="secondary" onClick={handlePrev}>Назад</button>
                 : null
             }
-            <button className="btn" onClick={handleNext}>
+            <button onClick={handleNext}>
                 {currentIndex === questions.length - 1 ? "Завершить" : "Далее"}
             </button>
         </div>
