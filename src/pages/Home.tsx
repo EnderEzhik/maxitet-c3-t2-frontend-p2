@@ -5,9 +5,9 @@ function Home() {
 
     return (
         <div className="container">
-            <h1 className="home-title">Добро пожаловать в квиз-викторину!</h1>
-            <p className="home-description">Проверьте свои знания, ответив на несколько вопросов.</p>
-            <button className="btn" onClick={() => navigator("/quiz")}>Начать</button>
+            <h1>Добро пожаловать в квиз-викторину!</h1>
+            <p>Ответьте на несколько вопросов и узнайте насколько Вы программист!</p>
+            <button onClick={() => navigator("/quiz")}>Тап тап хомяка</button>
         </div>
     )
 }

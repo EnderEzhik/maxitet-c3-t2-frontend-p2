@@ -1,7 +1,7 @@
 import { useState } from "react"
-import QuestionCard from "../components/QuestionCard"
-import { questions } from "../data/questions"
 import { useNavigate } from "react-router-dom";
+import { questions } from "../data/questions"
+import QuestionCard from "../components/QuestionCard"
 import type { Answer } from "../types/Answer";
 
 function Quiz() {
