@@ -4,9 +4,35 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color: linear-gradient(135deg, #d466ea 0%, #5abdd6 100%);
+  --h1-color: #333;
+  --h2-color: #555;
+  --h3-color: #444;
+  --p-color: #666;
+  --secondary-text-color: #9d9ead;
+  --container-bg-color: #ffffff;
+  --option-bg-color: #f5f5f5;
+  --option-hover-bg-color: #eaeaea;
+  --option-selected-bg-color: #e0e7ff;
+}
+
+.dark {
+  --bg-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --h1-color: white;
+  --h2-color: #9d9ead;
+  --h3-color: #9d9ead;
+  --p-color: #9d9ead;
+  --secondary-text-color: #9d9ead;
+  --container-bg-color: #2a2b38;
+  --option-bg-color: #8f8f8f;
+  --option-hover-bg-color: #555555;
+  --option-selected-bg-color: #f8f8f8;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--bg-color);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -20,7 +46,7 @@ body {
 }
 
 .container {
-  background: white;
+  background: var(--container-bg-color);
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -29,25 +55,25 @@ body {
 
 h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: var(--h1-color);
   margin-bottom: 20px;
 }
 
 h2 {
   font-size: 1.8rem;
-  color: #555;
+  color: var(--h2-color);
   margin-bottom: 20px;
 }
 
 h3 {
   font-size: 1.3rem;
-  color: #444;
+  color: var(--h3-color);
   margin-bottom: 20px;
 }
 
 p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--p-color);
   margin-bottom: 20px;
   line-height: 1.6;
 }
@@ -88,7 +114,7 @@ button.secondary:hover {
   text-align: left;
   margin: 15px 0;
   padding: 12px 20px;
-  background: #f5f5f5;
+  background: var(--option-bg-color);
   border-radius: 12px;
   cursor: pointer;
   transition: background 0.2s ease, border 0.2s ease;
@@ -96,11 +122,11 @@ button.secondary:hover {
 }
 
 .option:hover {
-  background: #eaeaea;
+  background: var(--option-hover-bg-color);
 }
 
 .option.selected {
-  background: #e0e7ff;
+  background: var(--option-selected-bg-color);
   border-color: #667eea;
 }
 
