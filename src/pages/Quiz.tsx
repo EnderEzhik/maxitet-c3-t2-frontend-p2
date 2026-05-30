@@ -39,6 +39,9 @@ function Quiz() {
 
     return (
         <div className="container">
+            <div className="progress-bar-container">
+                <div className="progress-bar-fill" style={{width: `${((currentIndex + 1) / questions.length) * 100}%`}}></div>
+            </div>
             <p className="progress">Вопрос {currentIndex + 1} / {questions.length}</p>
             <QuestionCard question={questions[currentIndex]} onSelectChange={handleOptionChange} selectedOption={selectedAnswers[currentIndex]}/>
             {
