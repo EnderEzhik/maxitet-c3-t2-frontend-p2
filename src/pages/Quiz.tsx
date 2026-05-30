@@ -24,10 +24,11 @@ function Quiz() {
             return;
         }
 
-        setCurrentIndex(currentIndex + 1);
-        if (currentIndex === questions.length - 1) {
-            localStorage.setItem("answers", JSON.stringify(selectedAnswers));
-            navigate("/result");
+        if (currentIndex < questions.length - 1) {
+            setCurrentIndex(currentIndex + 1);
+        }
+        else if (window.confirm("Завершить викторину?")) {
+            finishQuiz();
         }
     }
 
@@ -36,6 +37,25 @@ function Quiz() {
             setCurrentIndex(currentIndex - 1);
         }
     };
+
+    function finishQuiz() {
+        let score = 0;
+
+        selectedAnswers.forEach((selected, index) => {
+            if (selected?.correct_answer_id === questions[index].correct_option_id) {
+                score++;
+            }
+        });
+
+        const bestScore = localStorage.getItem("bestScore");
+        const currentBestScore = bestScore ? parseInt(bestScore) : 0;
+
+        if (score > currentBestScore) {
+            localStorage.setItem("bestScore", score.toString());
+        }
+
+        navigate("/result", { state: { score, total: questions.length, questions, answers: selectedAnswers }});
+    }
 
     return (
         <div className="container">
